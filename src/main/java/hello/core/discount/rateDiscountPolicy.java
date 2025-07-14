@@ -2,11 +2,13 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 
 @Component
-public class RateDiscountPolicy implements DiscountPolicy {
+@Primary  // 이걸 우선으로 주입하라고 지정
+public class rateDiscountPolicy implements DiscountPolicy {
     private int discountRate = 10;
 
     @Override
